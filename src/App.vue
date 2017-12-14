@@ -1,12 +1,10 @@
 <template>
   <div id="app">
-    <!-- <div>{{ $t('messages.hello') }}</div> -->
-    <p>{{ $t("message.hello") }}</p>
-    <Button type="default" @click="changeHandler">change 中英版本</Button>
     <div style="margin:20px;">
-      <!-- <Button @click="goSurvey" type="default">goSurvey</Button>
+      <Button @click="$router.push('/en')" type="default">中英版本测试</Button>
+      <Button @click="goSurvey" type="default">goSurvey</Button>
       <Button @click="goWeixin" type="default">goWeixin</Button>    
-      <Button @click="gotreegrid" type="default">goTreeGrid</Button> -->
+      <Button @click="gotreegrid" type="default">goTreeGrid</Button>
     </div>
     <transition name="fade" mode="out-in" appear>
       <router-view></router-view>
@@ -32,15 +30,6 @@ export default {
     },
     gotreegrid () {
       this.$router.push('/example')
-    },
-    changeHandler () {
-      console.log(this.$i18n.locale)
-      let current = this.$i18n.locale
-      if (current === 'en') {
-        this.$i18n.locale = 'ja'
-      } else if (current === 'ja') {
-        this.$i18n.locale = 'en'
-      }
     }
   },
   created () {
@@ -49,19 +38,33 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
   * {
     margin: 0;
     padding: 0;
   }
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
   #app {
-      font-family: 'Avenir', Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-align: center;
-      color: #2c3e50;
-      margin-top: 60px;
-      padding-left: 20px;
-      margin-right: 20px;
+    height: 100%;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    display: flex;
+    &>div {
+      width: 120px;
+      display: flex;
+      flex-direction: column;
+      button {
+        margin-bottom: 15px;
+        &:nth-last-child(1) {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 </style>

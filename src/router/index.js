@@ -8,6 +8,7 @@ import example from '@/components/example.vue'
 import Home from '@/pages/home.vue'
 import Vuex from '@/pages/testVuex.vue'
 import testChild from '@/pages/testChild.vue'
+import english from '@/pages/translate.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -51,6 +52,10 @@ export default new Router({
     {
       path: '/child',
       component: testChild
+    },
+    {
+      path: '/en',
+      component: english
     }
   ]
 })

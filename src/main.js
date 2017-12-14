@@ -22,21 +22,9 @@ Vue.config.productionTip = false
 // 引入vuex
 import store from './vuex/store.js'
 
-const messages = {
-  en: {
-    message: {
-      hello: 'hello world'
-    }
-  },
-  ja: {
-    message: {
-      hello: 'こんにちは、世界'
-    }
-  }
-}
-
 // 引入 vue-i8n
 import VueI18n from 'Static/vue-i18n.min.js'
+import messages from 'Static/messages/messages.js'
 Vue.use(VueI18n)
 const i18n = new VueI18n({
   locale: 'ja', // 语言标识
