@@ -1,0 +1,9 @@
+build/*.js
+config/*.js
+src/components/grid.vue
+src/components/example.vue
+src/components/table/*.js
+src/components/table/mixins/*.js
+src/components/table/utils/*.js
+src/components/table/*.vue
+src/mixins/*.js
