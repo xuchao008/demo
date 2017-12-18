@@ -7,3 +7,5 @@ src/components/table/mixins/*.js
 src/components/table/utils/*.js
 src/components/table/*.vue
 src/mixins/*.js
+src/assets/option_chart.js
+src/assets/option_serie.js

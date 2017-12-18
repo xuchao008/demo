@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <div style="margin:20px;">
+    <div style="margin:20px;" class="headBar">
       <el-button @click="$router.push('/en')" type="default">中英版本测试</el-button>
       <el-button @click="goSurvey" type="default">goSurvey</el-button>
       <el-button @click="goWeixin" type="default">goWeixin</el-button>    
       <el-button @click="gotreegrid" type="default">goTreeGrid</el-button>
+      <el-button @click="goTestMock" type="default">test mock</el-button>
     </div>
     <transition name="fade" mode="out-in" appear>
       <router-view></router-view>
@@ -30,6 +31,9 @@ export default {
     },
     gotreegrid () {
       this.$router.push('/example')
+    },
+    goTestMock () {
+      this.$router.push('/mock')
     }
   },
   created () {
@@ -55,10 +59,14 @@ export default {
     text-align: center;
     color: #2c3e50;
     display: flex;
+    .headBar {
+      justify-content:center;
+    }
     &>div {
       width: 120px;
       display: flex;
       flex-direction: column;
+      padding: 20px;
       button {
         margin-bottom: 15px;
         width: 140px;

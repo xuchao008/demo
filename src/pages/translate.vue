@@ -32,15 +32,15 @@ export default {
   },
   directives: {
     tap: {
-      fn: null,
-      update (el, fn) {
-        console.log(123123123)
-        this.fn = fn
-        el.addEventListener('click', this.fn)
-      },
-      unbind (el, fn) {
-        el.removeEventListener('click', this.fn)
-      }
+    //   fn: null,
+    //   update (el, fn) {
+    //     console.log(123123123)
+    //     this.fn = fn
+    //     el.addEventListener('click', this.fn)
+    //   },
+    //   unbind (el, fn) {
+    //     el.removeEventListener('click', this.fn)
+    //   }
     }
   },
   methods: {
