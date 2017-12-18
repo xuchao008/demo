@@ -8,14 +8,14 @@ Vue.use(ZkTable)
 import Axios from 'axios'
 Vue.prototype.$http = Axios
 // 引入 iview
-import iView from 'iview'
-import 'iview/dist/styles/iview.css'
+// import iView from 'iview'
+// import 'iview/dist/styles/iview.css'
+// Vue.use(iView)
 // import 'babel-polyfill'
-Vue.use(iView)
 // 引入 element-ui
 import ElementUI from 'element-ui'
 Vue.use(ElementUI)
-// import 'element-ui/lib/theme-default/index.css'
+import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.config.productionTip = false
 

@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div style="margin:20px;">
-      <Button @click="$router.push('/en')" type="default">中英版本测试</Button>
-      <Button @click="goSurvey" type="default">goSurvey</Button>
-      <Button @click="goWeixin" type="default">goWeixin</Button>    
-      <Button @click="gotreegrid" type="default">goTreeGrid</Button>
+      <el-button @click="$router.push('/en')" type="default">中英版本测试</el-button>
+      <el-button @click="goSurvey" type="default">goSurvey</el-button>
+      <el-button @click="goWeixin" type="default">goWeixin</el-button>    
+      <el-button @click="gotreegrid" type="default">goTreeGrid</el-button>
     </div>
     <transition name="fade" mode="out-in" appear>
       <router-view></router-view>
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-
+const debug = process.env.NODE_ENV
 export default {
   name: 'app',
   data () {
@@ -33,7 +33,7 @@ export default {
     }
   },
   created () {
-    console.log(this.$t())
+    console.log(debug)
   }
 }
 </script>
@@ -61,10 +61,17 @@ export default {
       flex-direction: column;
       button {
         margin-bottom: 15px;
+        width: 140px;
         &:nth-last-child(1) {
           margin-bottom: 0;
         }
       }
     }
+  }
+</style>
+
+<style>
+  .el-button+.el-button {
+    margin-left: 0;
   }
 </style>

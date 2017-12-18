@@ -8,15 +8,16 @@
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint --ext .js,.vue src",
+    "test": "karma start test/unit/karma.conf.js"
   },
   "dependencies": {
     "axios": "^0.16.2",
     "echarts": "^3.6.2",
     "element-resize-detector": "^1.1.12",
-    "element-ui": "^2.0.3",
     "interact.js": "^1.2.8",
     "iview": "^2.4.0-beta.3",
+    "karma": "^1.7.1",
     "lodash": "^4.17.4",
     "net": "^1.0.2",
     "vue": "^2.3.3",
