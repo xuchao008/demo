@@ -1,10 +1,10 @@
 <template>
-  <div class="main">
+  <div id="main">
     <!-- <Button></Button> -->
     <h3>测试ele table</h3>
     <br />
     <el-button @click="clickFn">click me</el-button>
-    <!-- <el-table ref="table" :data="tableData3" border style="width: 100%" height="550">
+    <el-table ref="table" :data="tableData3" border style="width: 100%" height="550">
       <el-table-column prop="date" label="日期" width="150">
       </el-table-column>
       <el-table-column prop="name" label="姓名" width="120">
@@ -17,12 +17,13 @@
       </el-table-column>
       <el-table-column prop="zip" label="邮编" width="120">
       </el-table-column>
-    </el-table> -->
-    <img ref="table" src="static/images/testimage.jpg" style="width:'100%'"></img>
+    </el-table>
+    <img ref="table" src="static/images/testimage.jpg" style="width:'100%'" />
   </div>
 </template>
 <script>
 import html2canvas from 'Static/html2canvas'
+// import html2canvans2 from 'html2canvas.hertzen.com/dist/html2canvas.min.js'
 import {getPixelRatio} from 'Static/utils'
 export default {
   data () {
@@ -123,5 +124,7 @@ export default {
 }
 </script>
 <style scoped lang="less">
-
+  #main {
+    width: 100%;
+  }
 </style>
