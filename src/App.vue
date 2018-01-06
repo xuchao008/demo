@@ -15,6 +15,7 @@
 
 <script>
 const debug = process.env.NODE_ENV
+import select from '@/components/select'
 export default {
   name: 'app',
   data () {
