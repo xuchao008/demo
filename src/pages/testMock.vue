@@ -3,6 +3,30 @@
   <div>
     <h2>测试 mock</h2>
     <div id="chart" style="width:300px;height:300px;"></div>
+    <el-select v-model="value" placeholder="请选择">
+      <el-option
+        v-for="(item, index) in list"
+        :key="index"
+        :label="item.value"
+        :value="item.value">
+      </el-option>
+    </el-select>
+    <el-select v-model="value1" multiple placeholder="请选择">
+      <el-option
+        v-for="(item, index) in data.list1"
+        :key="index"
+        :label="item.value"
+        :value="item.value">
+      </el-option>
+    </el-select>
+    <el-select v-model="value2" multiple placeholder="请选择">
+      <el-option
+        v-for="(item, index) in data.list2"
+        :key="index"
+        :label="item.value"
+        :value="item.value">
+      </el-option>
+    </el-select>
     <ul>
       <!-- <li v-for="item in list.list">{{item.id}}</li> -->
     </ul>
@@ -19,7 +43,11 @@ export default {
     return {
       option: {},
       series: [],
-      list: []
+      list: [],
+      value: '123',
+      value1: '',
+      value2: '',
+      data: null
     }
   },
   methods: {
@@ -27,9 +55,27 @@ export default {
       this.$http.get('/api/').then((response) => {
         console.log(response)
       }).catch()
+    },
+    // 生成一个2000的数据
+    createData () {
+      let data = Mock.mock({
+        'list|2000': [
+          {value: '@name()'}
+        ],
+        'list1|2000': [
+          {value: '@name()'}
+        ],
+        'list2|2000': [
+          {value: '@name()'}
+        ]
+      })
+      this.data = data
+      this.list = data.list
+      console.log(data.list)
     }
   },
   created () {
+    this.createData()
     // let data = Mock.mock({
     //   'obj|1': {
     //     a: 1,
@@ -84,7 +130,7 @@ export default {
     // console.log(this.option)
   },
   mounted () {
-    this.getInfo()
+    // this.getInfo()
     // let dom = document.getElementById('chart')
     // let myChart = echarts.init(dom, 'shine')
     // myChart.setOption(this.option)

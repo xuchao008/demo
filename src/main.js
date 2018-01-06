@@ -31,6 +31,9 @@ const i18n = new VueI18n({
   messages
 })
 
+let moment = require('moment')
+console.log(moment().format())
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
