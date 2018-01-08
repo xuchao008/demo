@@ -1,6 +1,7 @@
 <template>
   <div
     class="el-select"
+    style="width:220px;margin-bottom:15px;"
     :class="[selectSize ? 'el-select--' + selectSize : '']"
     v-clickoutside="handleClose">
     <div
@@ -9,7 +10,7 @@
       @click.stop="toggleMenu"
       ref="tags"
       :style="{ 'max-width': inputWidth - 32 + 'px' }">
-      <transition-group @after-leave="resetInputHeight">
+      <!-- <transition-group @after-leave="resetInputHeight"> -->
         <el-tag
           v-for="item in selected"
           :key="getValueKey(item)"
@@ -21,7 +22,7 @@
           disable-transitions>
           <span class="el-select__tags-text">{{ item.currentLabel }}</span>
         </el-tag>
-      </transition-group>
+      <!-- </transition-group> -->
 
       <input
         type="text"
@@ -72,10 +73,11 @@
        @click="handleIconClick"
       ></i>
     </el-input>
-    <transition
+    <!-- <transition
       name="el-zoom-in-top"
       @before-enter="handleMenuEnter"
-      @after-leave="doDestroy">
+      @after-leave="doDestroy"> -->
+      <!-- select-dropdown -->
       <el-select-menu
         ref="popper"
         v-show="visible && emptyText !== false">
@@ -94,27 +96,26 @@
         </el-scrollbar>
         <p class="el-select-dropdown__empty" v-if="emptyText && (allowCreate && options.length === 0 || !allowCreate)">{{ emptyText }}</p>
       </el-select-menu>
-    </transition>
+    <!-- </transition> -->
   </div>
 </template>
-
 <script type="text/babel">
-  import Emitter from 'element-ui/src/mixins/emitter';
-  import Focus from 'element-ui/src/mixins/focus';
-  import Locale from 'element-ui/src/mixins/locale';
-  import ElInput from 'element-ui/packages/input';
+  import Emitter from '@/components/eleCom/mixins/emitter';
+  import Focus from '@/components/eleCom/mixins/focus';
+  import Locale from '@/components/eleCom/mixins/locale';
+  import ElInput from '@/components/eleCom/input';
   import ElSelectMenu from './select-dropdown.vue';
   import ElOption from './option.vue';
-  import ElTag from 'element-ui/packages/tag';
-  import ElScrollbar from 'element-ui/packages/scrollbar';
+  import ElTag from '@/components/eleCom/tag';
+  import ElScrollbar from '@/components/eleCom/scrollbar';
   import debounce from 'throttle-debounce/debounce';
-  import Clickoutside from 'element-ui/src/utils/clickoutside';
-  import { addClass, removeClass, hasClass } from 'element-ui/src/utils/dom';
-  import { addResizeListener, removeResizeListener } from 'element-ui/src/utils/resize-event';
-  import { t } from 'element-ui/src/locale';
-  import scrollIntoView from 'element-ui/src/utils/scroll-into-view';
-  import { getValueByPath } from 'element-ui/src/utils/util';
-  import { valueEquals } from 'element-ui/src/utils/util';
+  import Clickoutside from '@/components/eleCom/utils/clickoutside';
+  import { addClass, removeClass, hasClass } from '@/components/eleCom/utils/dom';
+  import { addResizeListener, removeResizeListener } from '@/components/eleCom/utils/resize-event';
+  import { t } from '@/components/eleCom/locale';
+  import scrollIntoView from '@/components/eleCom/utils/scroll-into-view';
+  import { getValueByPath } from '@/components/eleCom/utils/util';
+  import { valueEquals } from '@/components/eleCom/utils/util';
   import NavigationMixin from './navigation-mixin';
 
   const sizeMap = {
@@ -126,7 +127,7 @@
   export default {
     mixins: [Emitter, Locale, Focus('reference'), NavigationMixin],
 
-    name: 'ElSelect',
+    name: 'DimSelect',
 
     componentName: 'ElSelect',
 

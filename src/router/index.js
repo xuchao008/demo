@@ -10,6 +10,9 @@ import Vuex from '@/pages/testVuex.vue'
 import testChild from '@/pages/testChild.vue'
 import english from '@/pages/translate.vue'
 import Mock from '@/pages/testMock.vue'
+import Jsx from '@/pages/jsx.vue'
+import Select from '@/pages/testSelect.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -61,6 +64,14 @@ export default new Router({
     {
       path: '/mock',
       component: Mock
+    },
+    {
+      path: '/jsx',
+      component: Jsx
+    },
+    {
+      path: '/select',
+      component: Select
     }
   ]
 })

@@ -6,6 +6,8 @@
       <el-button @click="goWeixin" type="default">goWeixin</el-button>    
       <el-button @click="gotreegrid" type="default">goTreeGrid</el-button>
       <el-button @click="goTestMock" type="default">test mock</el-button>
+      <el-button @click="goTestJsx">test jsx</el-button>
+      <el-button @click="goTestSelect">test select</el-button>
     </div>
     <transition name="fade" mode="out-in" appear>
       <router-view></router-view>
@@ -15,7 +17,10 @@
 
 <script>
 const debug = process.env.NODE_ENV
-import select from '@/components/select'
+const Mock = require('mockjs')
+import DimSelect from '@/components/eleCom/select'
+import DimOption from '@/components/eleCom/option'
+
 export default {
   name: 'app',
   data () {
@@ -35,10 +40,20 @@ export default {
     },
     goTestMock () {
       this.$router.push('/mock')
+    },
+    goTestJsx () {
+      this.$router.push('/jsx')
+    },
+    goTestSelect () {
+      this.$router.push('/select')
     }
   },
   created () {
     console.log(debug)
+  },
+  components: {
+    DimSelect,
+    DimOption
   }
 }
 </script>
