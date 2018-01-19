@@ -7,15 +7,30 @@ import ZkTable from 'vue-table-with-tree-grid'
 Vue.use(ZkTable)
 import Axios from 'axios'
 Vue.prototype.$http = Axios
+import 'babel-polyfill'
 // 引入 iview
-// import iView from 'iview'
-// import 'iview/dist/styles/iview.css'
-// Vue.use(iView)
-// import 'babel-polyfill'
+import iView from 'iview'
+import 'iview/dist/styles/iview.css'
+Vue.use(iView)
 // 引入 element-ui
-import ElementUI from 'element-ui'
-Vue.use(ElementUI)
+import elementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(elementUI)
+// import 'element-ui/lib/theme-chalk/select.css'
+// import 'element-ui/lib/theme-chalk/option.css'
+// import 'element-ui/lib/theme-chalk/tag.css'
+// import 'element-ui/lib/theme-chalk/input.css'
+// import 'element-ui/lib/theme-chalk/dropdown.css'
+// import 'element-ui/lib/theme-chalk/scrollbar.css'
+// import 'element-ui/lib/theme-chalk/icon.css'
+// import 'element-ui/lib/theme-chalk/fonts'
+// @font-face {
+//   /* font-properties */
+//   font-family: pictos;
+//   src:url('pictos/pictos-web.woff'),
+//   url('pictos/pictos-web.ttf'),
+//   url('pictos/pictos-web.eot'); /* IE9 */
+// }
 
 Vue.config.productionTip = false
 

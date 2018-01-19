@@ -13,8 +13,10 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "babel-polyfill": "^6.26.0",
     "echarts": "^3.8.5",
     "element-resize-detector": "^1.1.12",
+    "event-source-polyfill": "^0.0.12",
     "interact.js": "^1.2.8",
     "iview": "^2.4.0-beta.3",
     "karma": "^1.7.1",

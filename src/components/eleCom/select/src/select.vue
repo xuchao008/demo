@@ -650,9 +650,11 @@
 
       onOptionDestroy(index) {
         if (index > -1) {
+          this.options[index].$el = null
           this.optionsCount--;
           this.filteredOptionsCount--;
           this.options.splice(index, 1);
+          this.cachedOptions.splice(index, 1);
         }
       },
 

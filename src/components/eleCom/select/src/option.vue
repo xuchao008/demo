@@ -1,14 +1,14 @@
 <template>
-  <li
-    @mouseenter="hoverItem"
-    @click.stop="selectOptionClick"
-    class="el-select-dropdown__item"
-    v-show="visible"
-    :class="{
+    <!-- @mouseenter="hoverItem"
+    @click.stop="selectOptionClick" -->
+    <!-- :class="{
       'selected': itemSelected,
       'is-disabled': disabled || groupDisabled || limitReached,
       'hover': hover
-    }">
+    }"> -->
+  <li
+    class="el-select-dropdown__item"
+    v-show="visible">
     <slot>
       <span>{{ currentLabel }}</span>
     </slot>
@@ -83,12 +83,12 @@
     },
 
     watch: {
-      currentLabel() {
-        if (!this.created && !this.select.remote) this.dispatch('ElSelect', 'setSelected');
-      },
-      value() {
-        if (!this.created && !this.select.remote) this.dispatch('ElSelect', 'setSelected');
-      }
+      // currentLabel() {
+      //   if (!this.created && !this.select.remote) this.dispatch('ElSelect', 'setSelected');
+      // },
+      // value() {
+      //   if (!this.created && !this.select.remote) this.dispatch('ElSelect', 'setSelected');
+      // }
     },
 
     methods: {

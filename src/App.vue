@@ -8,6 +8,8 @@
       <el-button @click="goTestMock" type="default">test mock</el-button>
       <el-button @click="goTestJsx">test jsx</el-button>
       <el-button @click="goTestSelect">test select</el-button>
+      <el-button @click="goTestSlot">test slot</el-button>
+      <el-button @click="goTestPdf">test js2pdf</el-button>
     </div>
     <transition name="fade" mode="out-in" appear>
       <router-view></router-view>
@@ -18,8 +20,8 @@
 <script>
 const debug = process.env.NODE_ENV
 const Mock = require('mockjs')
-import DimSelect from '@/components/eleCom/select'
-import DimOption from '@/components/eleCom/option'
+// import DimSelect from '@/components/eleCom/select'
+// import DimOption from '@/components/eleCom/option'
 
 export default {
   name: 'app',
@@ -46,14 +48,20 @@ export default {
     },
     goTestSelect () {
       this.$router.push('/select')
+    },
+    goTestSlot () {
+      this.$router.push('/slot')
+    },
+    goTestPdf () {
+      this.$router.push('/home')
     }
   },
   created () {
     console.log(debug)
   },
   components: {
-    DimSelect,
-    DimOption
+    // DimSelect,
+    // DimOption
   }
 }
 </script>

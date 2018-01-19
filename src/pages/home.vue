@@ -23,6 +23,7 @@
 </template>
 <script>
 import html2canvas from 'Static/html2canvas'
+const jSPDF = require('Static/jspdf.min.js')
 // import html2canvans2 from 'html2canvas.hertzen.com/dist/html2canvas.min.js'
 import {getPixelRatio} from 'Static/utils'
 export default {
@@ -109,13 +110,17 @@ export default {
         html2canvas(table, {
           onrendered (image) {
             let url = image.toDataURL()
-            // document.getElementById()
-            let a = document.createElement('a')
-            a.href = url
-            a.download = vm.imageName ? vm.imageName : '未命名'
-            document.body.appendChild(a)
-            a.click()
-            document.body.removeChild(a)
+            let doc = new jSPDF('p', 'mm', 'a4') // eslint-disable-line
+            // 这里设置的是a4纸张尺寸
+            doc.addImage(url, 'JPEG', 0, 0, 210, 297)
+            // 输出保存命名为content的pdf
+            doc.save('content.pdf')
+            // let a = document.createElement('a')
+            // a.href = url
+            // a.download = vm.imageName ? vm.imageName : '未命名'
+            // document.body.appendChild(a)
+            // a.click()
+            // document.body.removeChild(a)
           }
         })
       })

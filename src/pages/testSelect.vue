@@ -1,16 +1,22 @@
 <template>
   <div class="select-container">
     <h1>select</h1>
-    <dim-select v-model="value1" type="default" size="medium" placeholder="请输入">
+    <!-- <dim-select v-model="value1" type="default" filterable multiple size="medium" placeholder="请输入" @change="optionChangeHandler($event)" @visible-change="currentValuesHandler($event)">
       <dim-option :value="item.value" :key="index" :label="item.label" v-for="(item,index) in list"></dim-option>
-    </dim-select>
+    </dim-select> -->
     <!-- <dim-select v-model="value2" type="default" filterable multiple size="medium" placeholder="请输入">
       <dim-option :value="item.value" :key="index" :label="item.label" v-for="(item,index) in list"></dim-option>
-    </dim-select>
-    <dim-select v-model="value3" type="default" filterable multiple size="medium" placeholder="请输入">
+    </dim-select>-->
+    <dim-select v-model="value3" type="default" multiple size="medium" placeholder="请输入">
       <dim-option :value="item.value" :key="index" :label="item.label" v-for="(item,index) in list"></dim-option>
-    </dim-select>
-    <dim-select v-model="value4" type="default" filterable multiple size="medium" placeholder="请输入">
+    </dim-select> 
+    <!-- <Select style="width:220px;" v-model="value4" filterable multiple>
+      <Option style="width:220px;" :value="item.value" :key="index" v-for="(item,index) in list">{{item.value}}</Option>
+    </Select>
+    <Select style="width:220px;" v-model="value5" filterable multiple>
+      <Option style="width:220px;" :value="item.value" :key="index" v-for="(item,index) in list">{{item.value}}</Option>
+    </Select> -->
+    <!-- <dim-select v-model="value4" type="default" filterable multiple size="medium" placeholder="请输入">
       <dim-option :value="item.value" :key="index" :label="item.label" v-for="(item,index) in list"></dim-option>
     </dim-select>
     <dim-select v-model="value5" type="default" filterable multiple size="medium" placeholder="请输入">
@@ -19,6 +25,10 @@
     <dim-select v-model="value6" type="default" filterable multiple size="medium" placeholder="请输入">
       <dim-option :value="item.value" :key="index" :label="item.label" v-for="(item,index) in list"></dim-option>
     </dim-select> -->
+    <!-- <Select v-model="value2" multiple filterable style="width:260px">
+      <Option v-for="(item, index) in list" :value="item.value" :key="index">{{ item.label }}</Option>
+    </Select> -->
+    <el-button @click="changeData">click me</el-button>
   </div>
 </template>
 <script>
@@ -39,13 +49,15 @@ export default {
         value: 'JavaScript',
         label: 'JavaScript'
       }],
+      data: {},
       list: [],
-      value1: ''
-      // value2: ['HTML'],
-      // value3: ['HTML'],
-      // value4: ['HTML'],
-      // value5: ['HTML'],
-      // value6: ['HTML']
+      value1: ['HTML'],
+      value2: ['HTML'],
+      value3: ['HTML'],
+      value4: [],
+      value5: [],
+      value6: ['HTML'],
+      flag: 0
     }
   },
   directives: {
@@ -62,20 +74,50 @@ export default {
     }
   },
   methods: {
+    optionChangeHandler (event) {
+      console.log(event)
+    },
+    // _prevClass :: "el-select-dropdown__item" @53277
+    changeData () {
+      this.list = []
+      // let len = this.list.length
+      // for (let i = 0; i < len; i++) {
+      //   this.list.pop()
+      // }
+      // console.log(this.list)
+      setTimeout(() => {
+        if (this.flag === 0) {
+          this.flag = 1
+          this.list = this.data.list2
+        } else {
+          this.flag = 0
+          this.list = this.data.list
+        }
+        console.log(this.list)
+      }, 0)
+    },
+    currentValuesHandler (event) {
+      if (event) {
+        console.log('打开了下拉框子')
+      } else {
+        console.log('关闭了下拉框子')
+      }
+    }
   },
   created () {
     let data = Mock.mock({
-      'list|2000': [
-        {value: '@name()' + '@name()', label: '@cname()' + '@name()'}
+      'list|500': [
+        {value: '@name()' + '@cname()', label: '@cname()' + '@name()'}
       ],
-      'list1|2000': [
-        {value: '@name()'}
+      'list1|500': [
+        {value: '@name()', label: '@name()'}
       ],
-      'list2|2000': [
-        {value: '@name()'}
+      'list2|500': [
+        {value: '@name()', label: '@name()'}
       ]
     })
     console.log(data)
+    this.data = data
     this.list = data.list
   },
   components: {

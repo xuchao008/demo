@@ -12,6 +12,7 @@ import english from '@/pages/translate.vue'
 import Mock from '@/pages/testMock.vue'
 import Jsx from '@/pages/jsx.vue'
 import Select from '@/pages/testSelect.vue'
+import Slot from '@/pages/testSlot.vue'
 
 Vue.use(Router)
 
@@ -72,6 +73,10 @@ export default new Router({
     {
       path: '/select',
       component: Select
+    },
+    {
+      path: '/slot',
+      component: Slot
     }
   ]
 })
