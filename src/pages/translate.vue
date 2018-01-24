@@ -1,12 +1,12 @@
 <template>
   <div class="container">
     <p>{{ $t("message.hello") }}</p>
-    <el-button type="default" @click="changeHandler">change中英版本</el-button>
+    <Button type="default" @click="changeHandler">change中英版本</Button>
     <el-select v-model="value1" placeholder="请输入">
       <el-option v-for="(item,index) in options" :key="index" :value="item.value">{{item.label}}</el-option>
-    </el-select>
-    <button v-tap="change">change</button>
-    <!-- <el-input type="default" v-focus></el-input> -->
+    </el-select> -->
+    <!-- <button v-tap="change">change</button> -->
+    <!-- <el-input type="default" v-focus></el-input>-->
   </div>
 </template>
 <script>
@@ -47,10 +47,10 @@ export default {
     changeHandler () {
       console.log(this.$i18n.locale)
       let current = this.$i18n.locale
-      if (current === 'en') {
-        this.$i18n.locale = 'ja'
-      } else if (current === 'ja') {
-        this.$i18n.locale = 'en'
+      if (current === 'zh_CN') {
+        this.$i18n.locale = 'en_US'
+      } else if (current === 'en_US') {
+        this.$i18n.locale = 'zh_CN'
       }
     },
     change () {

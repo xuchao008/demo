@@ -13,6 +13,7 @@ import Mock from '@/pages/testMock.vue'
 import Jsx from '@/pages/jsx.vue'
 import Select from '@/pages/testSelect.vue'
 import Slot from '@/pages/testSlot.vue'
+import testTree from '@/pages/testTree.vue'
 
 Vue.use(Router)
 
@@ -77,6 +78,10 @@ export default new Router({
     {
       path: '/slot',
       component: Slot
+    },
+    {
+      path: '/test-tree',
+      component: testTree
     }
   ]
 })

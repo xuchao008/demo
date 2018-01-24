@@ -1,10 +1,10 @@
 export default {
-  en: {
+  zh_CN: {
     message: {
       hello: 'hello world'
     }
   },
-  ja: {
+  en_US: {
     message: {
       hello: 'こんにちは、世界'
     }

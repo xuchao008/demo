@@ -16,21 +16,6 @@ Vue.use(iView)
 import elementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(elementUI)
-// import 'element-ui/lib/theme-chalk/select.css'
-// import 'element-ui/lib/theme-chalk/option.css'
-// import 'element-ui/lib/theme-chalk/tag.css'
-// import 'element-ui/lib/theme-chalk/input.css'
-// import 'element-ui/lib/theme-chalk/dropdown.css'
-// import 'element-ui/lib/theme-chalk/scrollbar.css'
-// import 'element-ui/lib/theme-chalk/icon.css'
-// import 'element-ui/lib/theme-chalk/fonts'
-// @font-face {
-//   /* font-properties */
-//   font-family: pictos;
-//   src:url('pictos/pictos-web.woff'),
-//   url('pictos/pictos-web.ttf'),
-//   url('pictos/pictos-web.eot'); /* IE9 */
-// }
 
 Vue.config.productionTip = false
 
@@ -41,8 +26,9 @@ import store from './vuex/store.js'
 import VueI18n from 'Static/vue-i18n.min.js'
 import messages from 'Static/messages/messages.js'
 Vue.use(VueI18n)
+let language = 'zh_CN'
 const i18n = new VueI18n({
-  locale: 'ja', // 语言标识
+  locale: language, // 语言标识
   messages
 })
 

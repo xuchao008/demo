@@ -7,7 +7,7 @@
     <!-- <dim-select v-model="value2" type="default" filterable multiple size="medium" placeholder="请输入">
       <dim-option :value="item.value" :key="index" :label="item.label" v-for="(item,index) in list"></dim-option>
     </dim-select>-->
-    <dim-select v-model="value3" type="default" multiple size="medium" placeholder="请输入">
+    <dim-select v-model="value3" type="default" multiple size="medium" placeholder="请输入" @change="optionChangeHandler">
       <dim-option :value="item.value" :key="index" :label="item.label" v-for="(item,index) in list"></dim-option>
     </dim-select> 
     <!-- <Select style="width:220px;" v-model="value4" filterable multiple>
@@ -97,11 +97,7 @@ export default {
       }, 0)
     },
     currentValuesHandler (event) {
-      if (event) {
-        console.log('打开了下拉框子')
-      } else {
-        console.log('关闭了下拉框子')
-      }
+      // console.log(event)
     }
   },
   created () {

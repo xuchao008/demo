@@ -18,7 +18,7 @@
     "element-resize-detector": "^1.1.12",
     "event-source-polyfill": "^0.0.12",
     "interact.js": "^1.2.8",
-    "iview": "^2.4.0-beta.3",
+    "iview": "^2.0.0-rc.18",
     "karma": "^1.7.1",
     "lodash": "^4.17.4",
     "mock": "^0.1.1",
