@@ -2,7 +2,7 @@
   <div class="container">
     <p>{{ $t("message.hello") }}</p>
     <Button type="default" @click="changeHandler">change中英版本</Button>
-    <el-select v-model="value1" placeholder="请输入">
+    <!-- <el-select v-model="value1" placeholder="请输入">
       <el-option v-for="(item,index) in options" :key="index" :value="item.value">{{item.label}}</el-option>
     </el-select> -->
     <!-- <button v-tap="change">change</button> -->

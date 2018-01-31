@@ -1,33 +1,9 @@
 <template>
   <div class="select-container">
     <h1>select</h1>
-    <!-- <dim-select v-model="value1" type="default" filterable multiple size="medium" placeholder="请输入" @change="optionChangeHandler($event)" @visible-change="currentValuesHandler($event)">
-      <dim-option :value="item.value" :key="index" :label="item.label" v-for="(item,index) in list"></dim-option>
-    </dim-select> -->
-    <!-- <dim-select v-model="value2" type="default" filterable multiple size="medium" placeholder="请输入">
-      <dim-option :value="item.value" :key="index" :label="item.label" v-for="(item,index) in list"></dim-option>
-    </dim-select>-->
-    <dim-select v-model="value3" type="default" multiple size="medium" placeholder="请输入" @change="optionChangeHandler">
-      <dim-option :value="item.value" :key="index" :label="item.label" v-for="(item,index) in list"></dim-option>
-    </dim-select> 
-    <!-- <Select style="width:220px;" v-model="value4" filterable multiple>
-      <Option style="width:220px;" :value="item.value" :key="index" v-for="(item,index) in list">{{item.value}}</Option>
-    </Select>
-    <Select style="width:220px;" v-model="value5" filterable multiple>
-      <Option style="width:220px;" :value="item.value" :key="index" v-for="(item,index) in list">{{item.value}}</Option>
-    </Select> -->
-    <!-- <dim-select v-model="value4" type="default" filterable multiple size="medium" placeholder="请输入">
-      <dim-option :value="item.value" :key="index" :label="item.label" v-for="(item,index) in list"></dim-option>
-    </dim-select>
-    <dim-select v-model="value5" type="default" filterable multiple size="medium" placeholder="请输入">
-      <dim-option :value="item.value" :key="index" :label="item.label" v-for="(item,index) in list"></dim-option>
-    </dim-select>
-    <dim-select v-model="value6" type="default" filterable multiple size="medium" placeholder="请输入">
-      <dim-option :value="item.value" :key="index" :label="item.label" v-for="(item,index) in list"></dim-option>
-    </dim-select> -->
-    <!-- <Select v-model="value2" multiple filterable style="width:260px">
-      <Option v-for="(item, index) in list" :value="item.value" :key="index">{{ item.label }}</Option>
-    </Select> -->
+    <el-select style="width:400px;" v-model="value3" type="default" multiple size="medium" placeholder="请输入" @change="optionChangeHandler">
+      <el-option v-for="(item,index) in options5" :value="item.value" :key="index" :label="item.label"></el-option>
+    </el-select>
     <el-button @click="changeData">click me</el-button>
   </div>
 </template>
@@ -41,21 +17,17 @@ export default {
     return {
       options5: [{
         value: 'HTML',
-        label: 'HTML'
+        label: 'HTML1'
       }, {
         value: 'CSS',
-        label: 'CSS'
+        label: 'CSS1'
       }, {
         value: 'JavaScript',
-        label: 'JavaScript'
+        label: 'JavaScript1'
       }],
       data: {},
       list: [],
-      value1: ['HTML'],
-      value2: ['HTML'],
       value3: ['HTML'],
-      value4: [],
-      value5: [],
       value6: ['HTML'],
       flag: 0
     }

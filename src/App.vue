@@ -1,15 +1,15 @@
 <template>
   <div id="app">
     <div style="margin:20px;" class="headBar">
-      <el-button @click="$router.push('/en')" type="default">中英版本测试</el-button>
-      <el-button @click="goSurvey" type="default">goSurvey</el-button>
-      <el-button @click="goWeixin" type="default">goWeixin</el-button>    
-      <el-button @click="gotreegrid" type="default">goTreeGrid</el-button>
-      <el-button @click="goTestMock" type="default">test mock</el-button>
-      <el-button @click="goTestJsx">test jsx</el-button>
-      <el-button @click="goTestSelect">test select</el-button>
-      <el-button @click="goTestSlot">test slot</el-button>
-      <el-button @click="goTestPdf">test js2pdf</el-button>
+      <Button @click="$router.push('/en')" type="default">中英版本测试</Button>
+      <Button @click="goSurvey" type="default">goSurvey</Button>
+      <Button @click="goWeixin" type="default">goWeixin</Button>    
+      <Button @click="gotreegrid" type="default">goTreeGrid</Button>
+      <Button @click="goTestMock" type="default">test mock</Button>
+      <Button @click="goTestJsx">test jsx</Button>
+      <Button @click="goTestSelect">test select</Button>
+      <Button @click="goTestSlot">test slot</Button>
+      <Button @click="goTestPdf">test js2pdf</Button>
     </div>
     <transition name="fade" mode="out-in" appear>
       <router-view></router-view>
@@ -103,7 +103,5 @@ export default {
 </style>
 
 <style>
-  .el-button+.el-button {
-    margin-left: 0;
-  }
+
 </style>

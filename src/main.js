@@ -12,10 +12,6 @@ import 'babel-polyfill'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 Vue.use(iView)
-// 引入 element-ui
-import elementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-Vue.use(elementUI)
 
 Vue.config.productionTip = false
 
@@ -24,16 +20,17 @@ import store from './vuex/store.js'
 
 // 引入 vue-i8n
 import VueI18n from 'Static/vue-i18n.min.js'
-import messages from 'Static/messages/messages.js'
+import messages from 'Static/messages'
 Vue.use(VueI18n)
+
 let language = 'zh_CN'
 const i18n = new VueI18n({
   locale: language, // 语言标识
   messages
 })
 
-let moment = require('moment')
-console.log(moment().format())
+// let moment = require('moment')
+// console.log(moment().format())
 
 /* eslint-disable no-new */
 new Vue({
